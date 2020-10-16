@@ -1,6 +1,5 @@
 import axios from 'axios'
 import * as qs from 'qs'
-axios.defaults.baseURL = 'http://yapi.zuoyebang.cc/mock/1706'
 axios.defaults.withCredentials = true
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 axios.defaults.validateStatus = status => status < 600
