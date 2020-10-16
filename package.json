@@ -1,14 +1,17 @@
 {
   "name": "lazyapi",
   "version": "0.1.0",
-  "private": true,
+  "main": "/dist/lazyapi.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "pkg": "vue-cli-service build --target lib src/export.js"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "core-js": "^3.6.5",
+    "element-ui": "^2.13.2",
     "vue": "^2.6.11"
   },
   "devDependencies": {
