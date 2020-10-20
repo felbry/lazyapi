@@ -7,12 +7,5 @@ const o = {
 }
 
 export default lazyapi(o, {
-  loading: {
-    clazz: Loading,
-    option: {}
-  },
-  msg: {
-    clazz: Notification,
-    option: {}
-  }
+  hooks: {}
 })

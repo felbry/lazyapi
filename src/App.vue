@@ -8,14 +8,21 @@
 import lazyapi from '@/api.js'
 export default {
   created () {
-    lazyapi['get:/zbtiku/quality/questionformat']()
-      .then()
+    lazyapi['get:/zbtiku/quality/questionformat']().then().catch(d => {
+      console.log('get fail')
+      console.log(d)
+    })
     lazyapi['post:/zbtiku/quality/questionformat']({
       a: 'a',
       b: 'b'
-    }).then(() => {
+    }).then(data => {
       console.log('post成功')
+      console.log(data)
     })
+      .catch(err => {
+        console.log('post fail')
+        console.log(err)
+      })
   }
 }
 </script>
