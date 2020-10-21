@@ -1,5 +1,5 @@
 {
-  "name": "lazyapi",
+  "name": "@felbry/lazyapi",
   "version": "0.1.0",
   "main": "/dist/lazyapi.umd.min.js",
   "scripts": {

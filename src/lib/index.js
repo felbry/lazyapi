@@ -1,6 +1,5 @@
 import axios from 'axios'
 import * as qs from 'qs'
-axios.defaults.baseURL = 'http://yapi.zuoyebang.cc/mock/1706'
 axios.defaults.withCredentials = true
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 axios.defaults.validateStatus = status => status < 600
@@ -9,7 +8,6 @@ let startLoading = emptyFunc
 let endLoading = emptyFunc
 let showMsg = emptyFunc
 const genRequest = (method, url) => (data = {}, customConf = {}) => {
-  // loading
   const loadingInstance = startLoading(customConf)
   return axios({
     url,
@@ -18,13 +16,13 @@ const genRequest = (method, url) => (data = {}, customConf = {}) => {
   })
     .then(response => {
       endLoading(loadingInstance, customConf)
-      const { data } = response
-      if (response.status === 200) {
+      const { status, data } = response
+      if (status === 200) {
         const { code } = data
         if (code === 0) {
           return data.data
         } else {
-          showMsg(data, customConf)
+          showMsg(response, customConf)
           return Promise.reject(data)
         }
       } else {
