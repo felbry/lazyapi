@@ -1,6 +1,6 @@
 {
   "name": "@felbry/lazyapi",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "/dist/lazyapi.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,12 +9,12 @@
     "pkg": "vue-cli-service build --target lib src/export.js"
   },
   "dependencies": {
-    "axios": "^0.20.0",
-    "core-js": "^3.6.5",
-    "element-ui": "^2.13.2",
-    "vue": "^2.6.11"
+    "axios": "^0.20.0"
   },
   "devDependencies": {
+    "core-js": "^3.6.5",
+    "element-ui": "^2.13.2",
+    "vue": "^2.6.11",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",

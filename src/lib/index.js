@@ -35,6 +35,7 @@ const lazyapi = (obj, set = {}) => {
   startLoading = (set.hooks && set.hooks.startLoading) || emptyFunc
   endLoading = (set.hooks && set.hooks.endLoading) || emptyFunc
   showMsg = (set.hooks && set.hooks.showMsg) || emptyFunc
+  axios.baseURL = set.host || ''
   const output = {}
   Object.keys(obj).forEach(desc => {
     const [method, url] = desc.split(':')
