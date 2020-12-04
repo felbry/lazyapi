@@ -18,8 +18,8 @@ const genRequest = (method, url) => (data = {}, customConf = {}) => {
       endLoading(loadingInstance, customConf)
       const { status, data } = response
       if (status === 200) {
-        const { code } = data
-        if (code === 0) {
+        const { code, errNo } = data
+        if (code === 0 || errNo === 0) {
           return data.data
         } else {
           showMsg(response, customConf)
@@ -35,7 +35,7 @@ const lazyapi = (obj, set = {}) => {
   startLoading = (set.hooks && set.hooks.startLoading) || emptyFunc
   endLoading = (set.hooks && set.hooks.endLoading) || emptyFunc
   showMsg = (set.hooks && set.hooks.showMsg) || emptyFunc
-  axios.baseURL = set.host || ''
+  axios.defaults.baseURL = set.host || ''
   const output = {}
   Object.keys(obj).forEach(desc => {
     const [method, url] = desc.split(':')
